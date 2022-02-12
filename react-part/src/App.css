@@ -48,7 +48,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: red;
 }
 
 .nav {
