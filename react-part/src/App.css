@@ -1,0 +1,125 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+.App {
+  text-align: center;
+  background-color: lightcoral;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --main: rgba(54, 62, 78);
+}
+
+.container {
+  background-color: rgb(134, 144, 167);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: var(--main);
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Navbar links */
+.nav a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.main{
+  padding: 5em 10em;
+  display: flex;
+}
+
+.title{
+  font-size: 120px;
+  margin: 0;
+}
+
+.task{
+  border: 1px solid white;
+  margin: 1rem;
+}
+.deleteBtn{
+  background-color: var(--main);
+  color: white;
+  border-radius: 10px;
+  height: 2rem;
+  border: 2px solid var(--main);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.deleteBtn:hover{
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--main);
+}
+
+input{
+  border-radius: 5px;
+  padding: 0.3em;
+  border: 1px solid var(--main);
+  width: 200px;
+}
+
+.addBtn{
+  background-color: var(--main);
+  color: white;
+  border-radius: 10px;
+  height: 2rem;
+  border: 2px solid var(--main);
+  padding: 0.5rem;
+  font-weight: bold;
+}
