@@ -11,7 +11,7 @@ mongoose
         app.use(cors());
         app.use(express.json())
         app.use("/api", router)
-        app.get("/checklist", express.static('react-part/build'))
+        app.use("/checklist", express.static('react-part/build'))
         app.use(express.static('react-part/build'))
         
 
