@@ -1,29 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import '../App.css';
+import axios from 'axios';
 
 const date = new Date();
-const todos = [
-    {   id: uuidv4(),
-        title: "Revising Japanese",
-        createdAt: date
-    },
-    {
-        id: uuidv4(), 
-        title: "Revising React",
-        createdAt: date
-    },
-    {
-        id: uuidv4(),
-        title: "Withdrawl of courses",
-        createdAt: date
-    }
-    ]
     
 
 const ToDoList = (props) => {
-    const [list, setList] = useState(todos);
+    const [list, setList] = useState([]);
     const [newItemTitle, setNewItemTitle] = useState('');
+
+    const handleRefresh = () => {
+        axios.get("http://localhost:5000/api/tasks").then(response => {
+            console.log(response)
+
+            setList(response.data)
+        });
+    }
+    useEffect(()=>{
+        handleRefresh();
+        
+        return()=>{
+            console.log('bye')
+        }
+    }, []);
 
     const handleDeletion = (i) => {
         let newList = [];
@@ -42,8 +42,15 @@ const ToDoList = (props) => {
     const handleAdding = () => {
         // let newItem = {title: newTask.current.value, createdAt: new Date()};
         let newItem = {id: uuidv4(), title: newItemTitle, createdAt: new Date()};
-        let newList = [...list, newItem]
-        setList(newList);
+
+        axios.post("http://localhost:5000/api/tasks", newItem).then(response =>{
+            console.log(response.data)
+            let newList = [...list, response.data]
+            setList(newList);
+
+            // handleRefresh();
+        })
+        
 
          
     }
