@@ -17,6 +17,8 @@ mongoose
             console.log("Server has started!")
         })
 
+        app.get("/checklist", express.static('react-part/build'))
+
         
     }
     
